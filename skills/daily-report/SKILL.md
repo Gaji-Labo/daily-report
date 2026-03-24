@@ -71,16 +71,17 @@ gh search issues --author=@me --created=YYYY-MM-DDT00:00:00..YYYY-MM-DDT23:59:59
 
 ```bash
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/post-to-esa.sh \
-  --title "YYYY-MM-DD 日報" \
+  --title "Daily 振り返り YYYY.MM.DD：${ESA_SCREEN_NAME:-$USER} #reflection" \
   --body "$REPORT_MD" \
-  --category "$REPORT_CATEGORY" \
+  --category "${REPORT_CATEGORY:-report/daily-report}" \
   --wip "$WIP_FLAG"
 ```
 
 必要な環境変数:
 - `ESA_TEAM` — esa チーム名
 - `ESA_TOKEN` — esa アクセストークン
-- `REPORT_CATEGORY` — 投稿カテゴリ (デフォルト: `日報/$USER`)
+- `REPORT_CATEGORY` — 投稿カテゴリ (デフォルト: `report/daily-report`)
+- `ESA_SCREEN_NAME` — esa のスクリーンネーム (タイトルに使用、デフォルト: `$USER`)
 
 投稿後、esa の URL をユーザーに表示して完了。
 
@@ -90,7 +91,8 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/post-to-esa.sh \
 |------|------|------|
 | `ESA_TEAM` | はい | esa チーム名 |
 | `ESA_TOKEN` | はい | esa アクセストークン |
-| `REPORT_CATEGORY` | いいえ | esa カテゴリ (デフォルト: `日報/$USER`) |
+| `REPORT_CATEGORY` | いいえ | esa カテゴリ (デフォルト: `report/daily-report`) |
+| `ESA_SCREEN_NAME` | いいえ | esa スクリーンネーム (タイトルに使用、デフォルト: `$USER`) |
 | `TARGET_REPOS` | いいえ | GitHub 対象リポジトリ (カンマ区切り) |
 | `SLACK_CHANNELS` | いいえ | Slack チャンネル ID (カンマ区切り) |
 

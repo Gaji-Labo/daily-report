@@ -15,7 +15,7 @@ ESA_TOKEN="${ESA_TOKEN:?ESA_TOKEN が未設定です。esa アクセストーク
 
 TITLE=""
 BODY=""
-CATEGORY="${REPORT_CATEGORY:-日報/${USER:-me}}"
+CATEGORY="${REPORT_CATEGORY:-report/daily-report}"
 WIP="false"
 
 while [[ $# -gt 0 ]]; do
