@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "daily-report",
-      "source": ".",
+      "source": "./",
       "description": "GitHub / Jira / Slack のアクティビティを収集し、対話で所感を引き出して esa に日報を投稿する",
       "version": "0.1.0"
     }
