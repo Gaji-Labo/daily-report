@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "description": "GitHub / Jira / Slack のアクティビティを収集し、対話で所感を引き出して esa に日報を投稿する",
   "author": {
-    "name": "your-name",
-    "url": "https://github.com/your-name"
+    "name": "yoshizawa",
+    "url": "https://github.com/yoshizawa"
   },
-  "repository": "https://github.com/your-name/daily-report-plugin",
+  "repository": "https://github.com/Gaji-Labo/daily-report",
   "license": "MIT",
   "keywords": ["daily-report", "esa", "jira", "slack", "github", "日報"]
 }
