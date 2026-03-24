@@ -5,7 +5,7 @@ set -euo pipefail
 #  esa に日報を投稿するスクリプト
 #  daily-report スキルの Step 5 から呼び出される
 #
-#  Usage:
+#  使い方:
 #    post-to-esa.sh --title "2026-03-24 日報" --body "## やったこと ..." \
 #                   [--category "日報/username"] [--wip true]
 # ============================================================
@@ -25,9 +25,9 @@ while [[ $# -gt 0 ]]; do
     --category) CATEGORY="$2"; shift 2 ;;
     --wip)      WIP="$2";      shift 2 ;;
     -h|--help)
-      echo "Usage: $0 --title TITLE --body BODY [--category CAT] [--wip true|false]"
+      echo "使い方: $0 --title TITLE --body BODY [--category CAT] [--wip true|false]"
       exit 0 ;;
-    *) echo "Unknown option: $1" >&2; exit 1 ;;
+    *) echo "不明なオプション: $1" >&2; exit 1 ;;
   esac
 done
 
@@ -98,7 +98,7 @@ if [[ -n "$URL" ]]; then
   fi
 else
   echo "❌ 投稿に失敗しました" >&2
-  if [[ -n "$ERROR" ]]; then echo "   Error: ${ERROR}" >&2
-  else echo "   Response: ${RESPONSE}" >&2; fi
+  if [[ -n "$ERROR" ]]; then echo "   エラー: ${ERROR}" >&2
+  else echo "   レスポンス: ${RESPONSE}" >&2; fi
   exit 1
 fi

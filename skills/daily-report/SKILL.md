@@ -4,12 +4,12 @@ description: |
   日報を作成して esa に投稿するスキル。
   GitHub / Jira / Slack からその日のアクティビティを自動収集し、
   ユーザーとの対話で所感・気づきを引き出してから日報を生成する。
-  This skill should be used when the user says "日報を書きたい", "今日の日報",
-  "daily report", "日報作成", "日報を投稿", "report to esa",
-  or mentions writing an end-of-day summary.
+  このスキルは「日報を書きたい」「今日の日報」「daily report」「日報作成」
+  「日報を投稿」「report to esa」などの発言や、
+  一日の振り返りを書きたいという意図が見られたときに使用する。
 ---
 
-# Daily report skill
+# 日報作成スキル
 
 GitHub、Jira、Slack からその日のアクティビティを収集し、対話で所感を引き出してから、esa に日報を投稿する。
 
