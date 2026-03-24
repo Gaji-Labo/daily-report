@@ -1,0 +1,12 @@
+{
+  "name": "daily-report",
+  "version": "0.1.0",
+  "description": "GitHub / Jira / Slack のアクティビティを収集し、対話で所感を引き出して esa に日報を投稿する",
+  "author": {
+    "name": "your-name",
+    "url": "https://github.com/your-name"
+  },
+  "repository": "https://github.com/your-name/daily-report-plugin",
+  "license": "MIT",
+  "keywords": ["daily-report", "esa", "jira", "slack", "github", "日報"]
+}
