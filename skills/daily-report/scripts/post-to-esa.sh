@@ -56,9 +56,7 @@ for p in posts:
         break
 " 2>/dev/null || true)
 
-FULL_BODY="# ${TITLE}
-
-${BODY}"
+FULL_BODY="${BODY}"
 
 PAYLOAD=$(python3 -c "
 import json, sys
