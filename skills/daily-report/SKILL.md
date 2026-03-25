@@ -87,6 +87,8 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/post-to-esa.sh \
 
 ## 環境変数
 
+`~/.claude/settings.json` の `env` セクションで設定する。
+
 | 変数 | 必須 | 説明 |
 |------|------|------|
 | `ESA_TEAM` | はい | esa チーム名 |

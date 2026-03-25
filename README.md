@@ -21,23 +21,29 @@ claude --plugin-dir /path/to/daily-report-plugin
 
 ### 1. 環境変数
 
-`.env.sample` を `.env` にコピーして値を設定する。
+`~/.claude/settings.json` の `env` セクションに設定する。
 
-```bash
-cp .env.sample .env
+```json
+{
+  "env": {
+    "ESA_TEAM": "gaji",
+    "ESA_TOKEN": "your-esa-token",
+    "REPORT_CATEGORY": "report/daily-report",
+    "ESA_SCREEN_NAME": "your-name",
+    "TARGET_REPOS": "org/repo1,org/repo2",
+    "SLACK_CHANNELS": "C01XXXX,C02YYYY"
+  }
+}
 ```
 
-```bash
-# 必須
-ESA_TEAM="gaji"                          # esa チーム名 (https://<team>.esa.io)
-ESA_TOKEN="your-esa-token"               # esa アクセストークン
-
-# 任意
-REPORT_CATEGORY="report/daily-report"    # esa 投稿カテゴリ
-ESA_SCREEN_NAME="your-name"              # タイトルに使う表示名 (デフォルト: $USER)
-TARGET_REPOS="org/repo1,org/repo2"       # GitHub 収集対象リポジトリ
-SLACK_CHANNELS="C01XXXX,C02YYYY"         # Slack 収集対象チャンネル ID
-```
+| 変数 | 必須 | 説明 |
+|------|------|------|
+| `ESA_TEAM` | はい | esa チーム名 (`https://<team>.esa.io`) |
+| `ESA_TOKEN` | はい | esa アクセストークン |
+| `REPORT_CATEGORY` | いいえ | esa 投稿カテゴリ (デフォルト: `report/daily-report`) |
+| `ESA_SCREEN_NAME` | いいえ | タイトルに使う表示名 (デフォルト: `$USER`) |
+| `TARGET_REPOS` | いいえ | GitHub 収集対象リポジトリ (カンマ区切り) |
+| `SLACK_CHANNELS` | いいえ | Slack 収集対象チャンネル ID (カンマ区切り) |
 
 ### 2. esa トークンの発行
 
@@ -96,7 +102,6 @@ SLACK_CHANNELS="C01XXXX,C02YYYY"         # Slack 収集対象チャンネル ID
 | `agents/report-interviewer.md` | 所感を引き出す対話エージェント |
 | `skills/daily-report/references/report-format.md` | 日報フォーマット定義 |
 | `skills/daily-report/scripts/post-to-esa.sh` | esa API 投稿/更新 |
-| `scripts/load-env.sh` | .env 読み込み (SessionStart hook) |
 | `hooks.json` + `scripts/check-report-reminder.sh` | 日報リマインダー |
 
 ## License
