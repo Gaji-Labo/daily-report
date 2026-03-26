@@ -1,6 +1,6 @@
 # daily-report — Claude Code Plugin
 
-GitHub / Jira / Slack のアクティビティを収集し、対話で所感を引き出して esa に日報を投稿する Claude Code プラグイン。
+GitHub / Jira / Slack のアクティビティを収集し、対話で所感・学びを引き出して esa に日報を投稿する Claude Code プラグイン。Gaji-Labo Style（行動規範）との照合機能付き。
 
 ## インストール
 
@@ -70,8 +70,12 @@ claude --plugin-dir /path/to/daily-report-plugin
 ### フロー
 
 1. 日付確認
-2. GitHub / Jira / Slack からアクティビティ収集
-3. AI が所感・気づきを対話で引き出す
+2. GitHub / Jira / Slack からアクティビティ収集（PR、コミット、コメント、受けたレビューなど）
+3. AI との対話で所感・学びを引き出す
+   - アクティビティの補完（ログに出ない作業やコミュニケーション面も拾い上げ）
+   - 知見の深掘り（十分な学びが出るまでループ）
+   - 次やることの確認
+   - Gaji-Labo Style の提案と採否選択
 4. 日報 Markdown を生成・プレビュー
 5. esa に投稿 (同日記事があれば上書き更新)
 
@@ -88,6 +92,9 @@ claude --plugin-dir /path/to/daily-report-plugin
 
 ## 次にするべきこと
 - 翌日以降のタスク
+
+## 今日の Gaji-Labo Style
+- Style #N「スタイル名」— 該当する行動と理由
 ```
 
 ### リマインダー
@@ -99,8 +106,9 @@ claude --plugin-dir /path/to/daily-report-plugin
 | ファイル | 役割 |
 |----------|------|
 | `skills/daily-report/SKILL.md` | メインワークフロー (5ステップ) |
-| `agents/report-interviewer.md` | 所感を引き出す対話エージェント |
+| `agents/report-interviewer.md` | 所感・学びを引き出す対話エージェント |
 | `skills/daily-report/references/report-format.md` | 日報フォーマット定義 |
+| `skills/daily-report/references/gaji-labo-style.md` | Gaji-Labo Style 行動規範リファレンス |
 | `skills/daily-report/scripts/post-to-esa.sh` | esa API 投稿/更新 |
 | `hooks.json` + `scripts/check-report-reminder.sh` | 日報リマインダー |
 
