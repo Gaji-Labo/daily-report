@@ -1,6 +1,8 @@
-# daily-report — Claude Code Plugin
+# daily-report — Claude Code / Cowork Plugin
 
-GitHub / Jira / Slack のアクティビティを収集し、対話で所感・学びを引き出して esa に日報を投稿する Claude Code プラグイン。Gaji-Labo Style（行動規範）との照合機能付き。
+GitHub / Jira / Slack のアクティビティを収集し、対話で所感・学びを引き出して esa に日報を投稿するプラグイン。Gaji-Labo Style（行動規範）との照合機能付き。
+
+> **2 つのバリアントがあります**: Claude Code CLI 版（`skills/daily-report/`）と Cowork 版（`skills/daily-report-cowork/`）。詳細は [バリアント比較](#バリアント比較) を参照。
 
 ## インストール
 
@@ -101,7 +103,26 @@ claude --plugin-dir /path/to/daily-report-plugin
 
 平日 17〜20 時にセッション終了すると、未投稿なら自動リマインド。
 
+## バリアント比較
+
+同じ日報を生成する 2 つのバリアントが存在する。実行環境に合わせて使い分ける。
+
+| | Claude Code 版 | Cowork 版 |
+|---|---|---|
+| パス | `skills/daily-report/` | `skills/daily-report-cowork/` |
+| 実行環境 | Claude Code CLI | Cowork（Claude Desktop） |
+| GitHub | `gh` CLI | GitHub コネクタ |
+| Jira | Atlassian MCP サーバー | Jira コネクタ |
+| Slack | Slack MCP サーバー | Slack コネクタ |
+| esa 投稿 | `post-to-esa.sh`（bash） | esa 公式 MCP サーバー |
+| 対話 | `agents/report-interviewer.md` | SKILL.md 内に統合 |
+| 環境変数 | 6 個 | 不要（コネクタ認証） |
+
+`references/report-format.md` と `references/gaji-labo-style.md` は両バリアントで共通。変更時は両方を更新すること。
+
 ## プラグイン構成
+
+### Claude Code 版
 
 | ファイル | 役割 |
 |----------|------|
@@ -111,6 +132,20 @@ claude --plugin-dir /path/to/daily-report-plugin
 | `skills/daily-report/references/gaji-labo-style.md` | Gaji-Labo Style 行動規範リファレンス |
 | `skills/daily-report/scripts/post-to-esa.sh` | esa API 投稿/更新 |
 | `hooks.json` + `scripts/check-report-reminder.sh` | 日報リマインダー |
+
+### Cowork 版
+
+| ファイル | 役割 |
+|----------|------|
+| `skills/daily-report-cowork/SKILL.md` | メインワークフロー (4ステップ、対話統合) |
+| `skills/daily-report-cowork/references/report-format.md` | 日報フォーマット定義（Claude Code 版と同一） |
+| `skills/daily-report-cowork/references/gaji-labo-style.md` | Gaji-Labo Style 行動規範リファレンス（同上） |
+
+### Cowork 版のセットアップ
+
+1. Claude Desktop で GitHub / Jira / Slack コネクタを接続
+2. esa 公式 MCP サーバーを設定（参考: https://docs.esa.io/posts/561）
+3. `skills/daily-report-cowork/` をスキルとしてアップロード
 
 ## License
 
