@@ -1,12 +1,12 @@
 {
   "name": "daily-report",
-  "version": "0.1.0",
-  "description": "GitHub / Jira / Slack のアクティビティを収集し、対話で所感を引き出して esa に日報を投稿する",
+  "version": "0.2.0",
+  "description": "GitHub / Jira / Slack のアクティビティを収集し、対話で所感・学びを引き出して esa に日報を投稿する。Gaji-Labo Style 照合機能付き。Claude Code / Cowork 両対応。",
   "author": {
     "name": "yoshizawa",
     "url": "https://github.com/yoshizawa"
   },
   "repository": "https://github.com/Gaji-Labo/daily-report",
   "license": "MIT",
-  "keywords": ["daily-report", "esa", "jira", "slack", "github", "日報"]
+  "keywords": ["daily-report", "esa", "jira", "slack", "github", "日報", "cowork", "gaji-labo-style"]
 }
