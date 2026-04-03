@@ -10,4 +10,5 @@
 | GitHub | `gh` CLI | GitHub MCP サーバー |
 | Jira | Atlassian MCP サーバー | Jira コネクタ |
 | Slack | Slack MCP サーバー | Slack コネクタ |
+| Google Calendar | — | Google Calendar コネクタ |
 | esa | `scripts/post-to-esa.sh` + 環境変数 | esa MCP サーバー |
